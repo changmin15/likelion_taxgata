@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>index</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Content</th>
+      <th>Lat</th>
+      <th>Lng</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @maps.each do |map| %>
+      <tr>
+        <td><%= map.title %></td>
+        <td><%= map.content %></td>
+        <td><%= map.lat %></td>
+        <td><%= map.lng %></td>
+        <td><%= link_to 'Show', map %></td>
+        <td><%= link_to 'Edit', edit_map_path(map) %></td>
+        <td><%= link_to 'Destroy', map, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= render 'form', map: @map %>
+
+<%= link_to 'new', new_map_path %> ||
+
+<%= link_to 'main', maps_main_path %> <!-- 요거 질문 필요해 왜 연결이 안되는지 모르겠어 ㅜ --> 
+
+
