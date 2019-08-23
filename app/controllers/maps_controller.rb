@@ -6,16 +6,23 @@ class MapsController < ApplicationController
   def index
     @maps = Map.all
     @map = Map.new
-
+  end
+  
+  def select
+    @map = Map.new
   end
 
+  def explan
+  end
+  
+  def mypage
+    @map = Map.new
+
+  end
+  
   # GET /maps/1
   # GET /maps/1.json
   def show
-  end
-  
-  def main
-    @map = Map.new
   end
 
   # GET /maps/new
